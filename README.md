@@ -42,7 +42,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Challenge Name Here | 0      | 0000 |
+| Spectre             | 300    | 9000 |
 
 ### Web Exploitation
 
