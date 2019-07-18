@@ -1,0 +1,4 @@
+Flask
+WTForms
+pycrypto
+ecdsa

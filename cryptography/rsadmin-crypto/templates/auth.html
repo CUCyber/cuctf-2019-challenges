@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Public Key Database</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="{{ url_for('static',filename='css/noscript.css') }}" /></noscript>
+	</head>
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<div class="inner">
+						<h2>Authenticate Below</h2>
+							<section>
+								<form method="post" action="{{ url_for('authenticate') }}">
+                        <div class="field">
+                           <textarea name="signature" id="signature" placeholder="Signature" rows="1"></textarea>
+                        </div>
+                        <ul class="actions">
+                           <li><input type="submit" value="Submit" class="special" /></li>
+                        </ul>
+                     </form>
+					<p>
+					{% if incorrect %}
+					<h3 id="incorrect">You could not be properly authenticated.</h3>
+					{% endif %}
+					</p>
+                  </section>
+               </div>
+            </div>
+         </header>
+         <!-- Main -->
+         <footer></footer>
+      </div>
+		<!-- Scripts -->
+		<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+	</body>
+</html>

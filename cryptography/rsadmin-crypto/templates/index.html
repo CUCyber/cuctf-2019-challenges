@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Public Key Database</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}"/>
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="{{ url_for('static',filename='css/noscript.css') }}" /></noscript>
+	</head>
+   <body>
+      <!-- Wrapper -->
+      <div id="wrapper">
+         <!-- Header -->
+         <header id="header">
+            <div class="content">
+               <div class="inner">
+                  <h2>Public Key Database</h2>
+                  <section>
+					<ul class="actions">
+						<li><a href="#info" class="button special">Information</a></li>
+						<li><a href="/authenticate" class="button special">Authentication</a></li>
+						<li><a href="{{ url_for('static',filename='uploads/keylist.json') }}" class="button special">Key List</a></li>
+					</ul>
+                  </section>
+				</div>
+			</div>
+		</header>
+
+		<div id="main">         
+			<article id="info">
+				<h2 class="major">Information</h2>
+				<p>The lead developer of this public key database is Bob. Bob is also a budding cryptographer and so he thought of using message signatures to verify who is an admin. Bob follows PKCS v1.5 and chose to use a strong hash function, SHA256, to hash the message <code>I am an administrator.</code>. The following psuedo-code is used to verify signatures.
+<pre>
+<code>message = "I am an administrator."
+
+verify_signature(signature):
+  publickeys = load_json("keylist.json")
+
+  for key in publickeys:
+    if verify(hash(message), b64decode(signature)):
+      return True
+
+  return False</code>
+</pre>
+</p>
+			</article>
+		</div>
+
+         <!-- Main -->
+         <footer></footer>
+      </div>
+      <!-- BG -->
+      <div id="bg"></div>
+      <!-- Scripts -->
+		<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+   </body>
+</html>
