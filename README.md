@@ -56,7 +56,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | --------------------| ------ | ---- |
 | RSAdmin             | 200    | 8000 |
 
-### Steganography
+### Forensics
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
