@@ -22,6 +22,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 	* radare2
 	* binaryninja
 	* ida/ida pro
+	* ghidra
 
 ## Rules
 
