@@ -2,4 +2,4 @@
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| RingRing            | 25     | None |
+| RingRing            | 50     | None |

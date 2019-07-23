@@ -37,13 +37,14 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Challenge Name Here | 0      | 0000 |
+| StrangerHeaders     | 100    | none |
 
 ### Binary Exploitation
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
 | Spectre             | 300    | 9000 |
+| VM                  | 750    | 9100 |
 
 ### Web Exploitation
 
@@ -61,7 +62,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| RingRing            | 25     | None |
+| RingRing            | 50     | None |
 
 ### Trivia
 
