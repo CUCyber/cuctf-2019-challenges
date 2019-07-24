@@ -38,7 +38,7 @@ def authenticate():
 	if request.method == 'POST':
 		signature = request.form['signature']
 		if verify_signature(signature):
-			return render_template('flag-vUs9nk4RbR.html')
+			return render_template('flag-8b8a7d3931eec3f0567e97ac1879601e72baf5ffaec192318b72f5c73a12e105f787c9542ace022e30f19b96e565e1289487e88e93962152e801cb7d6448a07d.html')
 		else:
 			return render_template('auth.html', incorrect=True)
 	elif request.method == 'GET':
