@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Figure out how many arguments it takes 
+
+I can't get past Level 1
+2. Each level prints "Level X". Since you have no information, brute force until "Level 2" is printed.
+
+I can't get past level 2
+3. March 15, 44 BC

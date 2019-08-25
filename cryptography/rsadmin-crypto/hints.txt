@@ -1,0 +1,11 @@
+I know I have the right solution but it's not accepting my signature!
+1. This is how the server verifies your message:
+
+    h = SHA256.new()
+    h.update(message.encode('utf-8'))
+    verifier = PKCS1_v1_5.new(key)
+    try:
+        if verifier.verify(h, b64decode(signature)):
+            return True
+    except:
+        return False
