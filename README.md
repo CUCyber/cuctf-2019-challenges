@@ -47,6 +47,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Spectre             | 300    | 9000 |
 | VM                  | 750    | 9100 |
 | Aegis               | 400    | 9200 |
+| TCash               | 700    | 9300 |
 
 ### Web Exploitation
 
