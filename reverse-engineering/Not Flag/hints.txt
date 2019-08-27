@@ -1,0 +1,5 @@
+I have no idea where to start
+1. Try understanding what the problem is with "checks". Can you do it manually?
+
+I see all these checks and I know I need to solve the flag from them, but how?
+2. Google what a SAT Solver is
