@@ -29,7 +29,7 @@ def main(argv):
 
     def should_abort(state):
         stdout_output = state.posix.dumps(sys.stdout.fileno())
-        return b'''Not Flag''' in stdout_output
+        return b'''Not flag''' in stdout_output
 
     simulation.explore(find=is_successful, avoid=should_abort)
 
