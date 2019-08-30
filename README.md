@@ -74,4 +74,13 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Challenge Name Here | 0      | 0000 |
+| Question 1          | 10     | None |
+| Question 2          | 10     | None |
+| Question 3          | 10     | None |
+| Question 4          | 10     | None |
+| Question 5          | 10     | None |
+| Question 6          | 10     | None |
+| Question 7          | 10     | None |
+| Question 8          | 10     | None |
+| Question 9          | 10     | None |
+| Question 10         | 10     | None |
