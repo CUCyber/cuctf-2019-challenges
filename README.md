@@ -45,10 +45,12 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Spectre             | 300    | 9000 |
-| VM                  | 750    | 9100 |
-| Aegis               | 400    | 9200 |
-| TCash               | 700    | 9300 |
+| Bof1                |  10    | 9000 |
+| Bof2                |  50    | 9100 |
+| Spectre             | 300    | 9200 |
+| Aegis               | 400    | 9300 |
+| TCash               | 700    | 9400 |
+| VM                  | 750    | 9500 |
 
 ### Web Exploitation
 
