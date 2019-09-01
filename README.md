@@ -56,7 +56,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Heist               | 400    | 8545 |
+| Heist               | 400    | 7300 |
 
 ### Cryptography
 
