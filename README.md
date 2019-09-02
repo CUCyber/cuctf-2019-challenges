@@ -56,6 +56,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
+| Election            | 200    | 7200 |
 | Heist               | 400    | 7300 |
 
 ### Cryptography
