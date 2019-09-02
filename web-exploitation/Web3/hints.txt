@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Look up php comparison vulnerabilities
+
+I still have no idea what I should be looking at here
+2. What happens if strcmp receives a *string*? What happens if it doesn't?
+
+I'm still not sure what vulnerability it could be
+3. Look up PHP Type Juggling

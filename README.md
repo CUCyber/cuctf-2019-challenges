@@ -55,9 +55,14 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 ### Web Exploitation
 
 | Challenge           | Points | Port |
-| --------------------| ------ | ---- |
+| ------------------- | ------ | ---- |
+| Web1                |  10    | 7000 |
+| Web2                |  25    | 7010 |
+| Web3                |  50    | 7020 |
+| ReadMe              | 100    | 7100 |
 | Election            | 200    | 7200 |
-| Heist               | 400    | 7300 |
+| Paths               | 300    | 7300 |
+| Heist               | 400    | 7400 |
 
 ### Cryptography
 
