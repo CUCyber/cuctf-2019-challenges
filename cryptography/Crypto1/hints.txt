@@ -1,0 +1,8 @@
+I have no idea where to start
+1. https://gchq.github.io/CyberChef/
+
+I have no idea where to start
+2. This data is encoded
+
+I have no idea where to start
+3. This encoding has an equals sign at the end to indicate padding

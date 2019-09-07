@@ -69,6 +69,11 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
+| Crypto1             |  10    | None |
+| Crypto2             |  20    | None |
+| Crypto3             |  30    | None |
+| Crypto4             |  40    | None |
+| Crypto5             |  50    | None |
 | RSAdmin             | 200    | 8000 |
 
 ### Forensics
