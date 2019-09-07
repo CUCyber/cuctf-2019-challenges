@@ -63,6 +63,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Election            | 200    | 7200 |
 | Paths               | 300    | 7300 |
 | Heist               | 400    | 7400 |
+| Responsive          | 600    | 7500 |
 
 ### Cryptography
 
