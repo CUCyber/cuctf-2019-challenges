@@ -8,7 +8,7 @@ from base64 import b64decode
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 from Crypto.Signature import PKCS1_v1_5
-from flask import Flask, render_template, flash, request
+from flask import Flask, render_template, render_template_string, flash, request
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 
 class ReusableForm(Form):
@@ -38,7 +38,7 @@ def authenticate():
 	if request.method == 'POST':
 		signature = request.form['signature']
 		if verify_signature(signature):
-			return render_template('flag-8b8a7d3931eec3f0567e97ac1879601e72baf5ffaec192318b72f5c73a12e105f787c9542ace022e30f19b96e565e1289487e88e93962152e801cb7d6448a07d.html')
+			return render_template_string('CUCTF{Pl3453_d0n7_r3us3_Pr1m35!}')
 		else:
 			return render_template('auth.html', incorrect=True)
 	elif request.method == 'GET':
