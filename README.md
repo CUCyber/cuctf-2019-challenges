@@ -50,10 +50,11 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | --------------------| ------ | ---- |
 | Bof1                |  10    | 9000 |
 | Bof2                |  50    | 9100 |
-| Spectre             | 300    | 9200 |
-| Aegis               | 400    | 9300 |
-| TCash               | 700    | 9400 |
-| VM                  | 750    | 9500 |
+| Uaf1                | 100    | 9200 |
+| Spectre             | 300    | 9300 |
+| Aegis               | 400    | 9400 |
+| TCash               | 700    | 9500 |
+| VM                  | 750    | 9600 |
 
 ### Web Exploitation
 
