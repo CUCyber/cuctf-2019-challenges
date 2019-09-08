@@ -25,16 +25,14 @@ void printFlag(unsigned long long flag[], int nelems){
 
 
 int main() {
-	unsigned long long flag[] = {	
-	1397213917,
-	868635385,
-	1996344100,
-	1931072721,
-	852697867,
-	1661543835,
-	2009492610,
-	125
-	};
+	unsigned long long flag[] = {1397213917,
+ 868635385,
+ 1996356850,
+ 1931072721,
+ 852697867,
+ 1661543885,
+ 2009492660,
+ 125};
 	printFlag(flag, sizeof(flag)/sizeof(flag[0]));
 	return 0;
 }

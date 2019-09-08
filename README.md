@@ -37,6 +37,9 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
+| RE1                 |  10    | none |
+| RE2                 |  30    | none |
+| RE3                 |  50    | none |
 | StrangerHeaders     | 100    | none |
 | Not Flag            | 350    | none |
 | Without a Trace     | 500    | none |
