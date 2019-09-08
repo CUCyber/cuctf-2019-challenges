@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Try to figure out the password
+
+I have no idea where to start
+2. Perhaps the password is in the binary somewhere
+
+I have no idea where to start
+3. man strings

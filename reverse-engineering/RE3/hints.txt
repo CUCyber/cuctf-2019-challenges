@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Have you tried running the program? What happens?
+
+I ran it and nothing happens. I'm stuck.
+2. What is the program actually doing in assembly? If you haven't looked at that yet, try using a disassembler like objdump, binaryninja, ghidra, cutter, or radare.
+
+I see what's happening but I can't figure out how to solve it.
+3. In the binary, it's comparing 0 to 1 and always exiting instead of printing the flag. We can simply edit the file to make it do what we want. Google search for "Patching a binary".
