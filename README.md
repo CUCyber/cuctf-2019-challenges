@@ -81,7 +81,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Crypto3             |  30    | None |
 | Crypto4             |  40    | None |
 | Crypto5             |  50    | None |
-| RSAdmin             | 200    | 8000 |
+| RSAdmin             | 300    | 8000 |
 | SMS                 | 600    | 8100 |
 
 ### Forensics
