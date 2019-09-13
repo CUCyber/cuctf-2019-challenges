@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Try navigating to the URL and using the API
+
+I've messed with the SMS API but I can't seem to find anything useful
+2. Try playing with the send function
+
+I understand that it's a padding oracle attack but I think I'm missing something
+3. PKCS#1v1.5

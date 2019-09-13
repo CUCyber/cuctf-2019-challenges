@@ -20,6 +20,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 	* radare2
 * reverse engineering platform
 	* radare2
+    * cutter
 	* binaryninja
 	* ida/ida pro
 	* ghidra
@@ -81,6 +82,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Crypto4             |  40    | None |
 | Crypto5             |  50    | None |
 | RSAdmin             | 200    | 8000 |
+| SMS                 | 600    | 8100 |
 
 ### Forensics
 

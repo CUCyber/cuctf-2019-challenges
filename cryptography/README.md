@@ -8,6 +8,7 @@
 | Crypto4             |  40    | None |
 | Crypto5             |  50    | None |
 | RSAdmin             | 200    | 8000 |
+| SMS                 | 600    | 8100 |
 
 ## Flags
 
@@ -19,3 +20,4 @@
 | Crypto4             | CUCTF{LE_CHIFFRE_INDECHIFFRABLE}      |
 | Crypto5             | CUCTF{4ll_17_T4k35_15_4_By73}         |
 | RSAdmin             | CUCTF{Pl3453_d0n7_r3us3_Pr1m35!}      |
+| SMS                 | CUCTF{7h3_p4dd1n6_0r4cl3_kn0w5_4ll}   |
