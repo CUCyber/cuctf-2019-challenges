@@ -1,0 +1,8 @@
+I have no idea where to start
+1. DTMF
+
+I decoded the DTMF tones but I don't understand what to do next with the numbers
+2. Perhaps the number are just a representation of something else
+
+I didn't quite get your last hint
+3. Hex
