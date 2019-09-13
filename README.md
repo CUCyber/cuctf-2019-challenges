@@ -38,12 +38,13 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| RE1                 |  10    | none |
-| RE2                 |  30    | none |
-| RE3                 |  50    | none |
-| StrangerHeaders     | 100    | none |
-| Not Flag            | 350    | none |
-| Without a Trace     | 500    | none |
+| RE1                 |  10    | None |
+| RE2                 |  30    | None |
+| RE3                 |  50    | None |
+| StrangerHeaders     | 100    | None |
+| Gore                | 250    | None |
+| Not Flag            | 350    | None |
+| Without a Trace     | 500    | None |
 
 ### Binary Exploitation
 
