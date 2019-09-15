@@ -1,0 +1,62 @@
+# $ find . -name 'Dockerfile' | grep -v Heist | grep -Fv '/exploit/' | grep -Fv '/src/'
+# ./web-exploitation/Responsive/Dockerfile
+# ./web-exploitation/Web3/Dockerfile
+# ./web-exploitation/Paths/Dockerfile
+# ./web-exploitation/Web2/Dockerfile
+# ./web-exploitation/ReadMe/Dockerfile
+# ./web-exploitation/Election/Dockerfile
+# ./web-exploitation/Web1/Dockerfile
+# ./cryptography/SMS/Dockerfile
+# ./cryptography/RSAdmin/Dockerfile
+# ./binary-exploitation/Bof1/Dockerfile
+# ./binary-exploitation/Uaf1/Dockerfile
+# ./binary-exploitation/Aegis/Dockerfile
+# ./binary-exploitation/VM/Dockerfile
+# ./binary-exploitation/Bof3/Dockerfile
+# ./binary-exploitation/Spectre/Dockerfile
+# ./binary-exploitation/Bof2/Dockerfile
+# ./binary-exploitation/Uaf2/Dockerfile
+# ./binary-exploitation/Tcash/Dockerfile
+---
+- name: CUCTF Provisioning
+  hosts: localhost
+
+  tasks:
+
+  - name: Obtain auth
+    ovirt_auth:
+      url: https://architect.lab.cucyber.net/ovirt-engine/api
+      username: "fmclane@lab.cucyber.net"
+      password: "{{ lookup('file', 'secrets') }}"
+      ca_file: ca.pem
+
+  - name: Create VM - test
+    ovirt_vms:
+      state: running
+      auth: "{{ ovirt_auth }}"
+      template: "{{ item.template }}"
+      cluster: "2019"
+      memory: "{{ item.memory }}"
+      cpu_cores: "{{ item.cpu_cores }}"
+      type: server
+      name: "{{ item.name }}"
+      nics:
+        - name: nic1
+          profile_name: "{{ item.vlan }}"
+          interface: virtio
+      cloud_init:
+        host_name: "{{ item.hostname }}"
+        user_name: root
+        root_password: CUCyberCash1337$
+    with_items:
+      - name: "cuctf-test"
+        template: "cuctf-template"
+        vlan: "cuctf"
+        hostname: "test.ctf.cuctf.io"
+        memory: "2GiB"
+        cpu_cores: "1"
+
+  - name: Revoke auth
+    ovirt_auth:
+      ovirt_auth: "{{ ovirt_auth }}"
+      state: absent
