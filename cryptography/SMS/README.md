@@ -1,7 +1,7 @@
 # SMS
 
 * `docker build -t sms .`
-* `docker run --rm -d -p 8100:8100 sms`
+* `docker run --rm -d -p 8200:8200 sms`
 
 This challenge is very fickle in that the exploit could take 1 minute, 30 minutes, or 30 hours. Test the exploit script on the server beforehand to figure out how long each one takes. If it looks like it won't finish in a reasonable time, restart the docker container.
 

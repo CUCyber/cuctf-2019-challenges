@@ -11,6 +11,6 @@ RUN apk add --no-cache                      \
 
 CMD [ "uvicorn", "api:app", \
         "--host", "0.0.0.0", \
-        "--port", "8100" ]
+        "--port", "8200" ]
 
-EXPOSE 8100
+EXPOSE 8200
