@@ -5,6 +5,7 @@
 | Stego1              | 10     | None |
 | Stego2              | 25     | None |
 | Stego3              | 50     | None |
+| Whale Hunt          | 600    | None |
 
 ## Flags
 

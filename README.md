@@ -89,9 +89,10 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Stego1              | 10     | None |
-| Stego2              | 25     | None |
-| Stego3              | 50     | None |
+| Stego1              |  10    | None |
+| Stego2              |  25    | None |
+| Stego3              |  50    | None |
+| Whale Hunt          | 600    | None |
 
 ### Trivia
 
