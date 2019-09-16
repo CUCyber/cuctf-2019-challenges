@@ -65,13 +65,13 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Challenge           | Points | Port |
 | ------------------- | ------ | ---- |
 | Web1                |  10    | 7000 |
-| Web2                |  25    | 7010 |
-| Web3                |  50    | 7020 |
-| ReadMe              | 100    | 7100 |
-| Election            | 200    | 7200 |
-| Paths               | 300    | 7300 |
-| Heist               | 400    | 7400 |
-| Responsive          | 600    | 7500 |
+| Web2                |  25    | 7100 |
+| Web3                |  50    | 7200 |
+| ReadMe              | 100    | 7300 |
+| Election            | 200    | 7400 |
+| Paths               | 300    | 7500 |
+| Heist               | 400    | 7600 |
+| Responsive          | 600    | 7700 |
 
 ### Cryptography
 
