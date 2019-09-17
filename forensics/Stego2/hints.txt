@@ -1,0 +1,2 @@
+I have no idea where to start
+1. Google "common steganography tools for CTFs"
