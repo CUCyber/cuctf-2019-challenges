@@ -1,1 +1,8 @@
-https://gchq.github.io/CyberChef/
+I have no idea where to start
+1. Try decoding the initial layer of the ciphertext
+
+I still have no idea what to do
+2. CyberChef can solve this challenge: https://gchq.github.io/CyberChef/
+
+I still have no idea what to do
+3. The word "byte" is in this cipher's name
