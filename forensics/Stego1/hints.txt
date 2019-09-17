@@ -1,0 +1,5 @@
+I have no idea where to start
+1. Try examining the file in every way you know how.
+
+I still have no idea what to do
+2. Have you heard of the command "strings"? What does it do?
