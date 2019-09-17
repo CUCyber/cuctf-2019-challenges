@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Look into what Docker images and Docker containers are
+
+I still have no idea where to start
+2. You'll need more than static analysis to solve this problem, but grepping for CUCTF in the file can lead you down a good path.
+
+I'm trying to restore the container but I keep getting an error. Any help?
+3. Mountpoints are important.
