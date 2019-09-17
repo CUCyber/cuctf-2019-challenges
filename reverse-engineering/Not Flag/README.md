@@ -1,6 +1,7 @@
 # Not Flag
 
-* `python generate.py > notflag.c; gcc -o notflag notflag.c -no-pie`
+* `python generate.py > notflag.c`
+* `gcc -o notflag notflag.c -no-pie`
 
 ## Description
 
