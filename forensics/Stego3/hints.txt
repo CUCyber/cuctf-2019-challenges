@@ -1,5 +1,5 @@
 I have no idea where to start
-1. DTMF
+1. What are the sounds that you're hearing? Perhaps there's a specific name for them.
 
 I decoded the DTMF tones but I don't understand what to do next with the numbers
 2. Perhaps the number are just a representation of something else
