@@ -34,11 +34,11 @@ POST "/send"
 
 ```JSON
 {
-  "to_user": {
+  "from_user": {
     "user_id": 0,
     "username": "Alice"
   },
-  "from_user": {
+  "to_user": {
     "user_id": 1,
     "username": "Bob"
   },
