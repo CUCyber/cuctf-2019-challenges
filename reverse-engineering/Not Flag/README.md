@@ -1,8 +1,5 @@
 # Not Flag
 
-* `python generate.py > notflag.c`
-* `gcc -o notflag notflag.c -no-pie`
-
 ## Description
 
 It's ready. Let's start with a flag. It can recognize when your string is the flag!
