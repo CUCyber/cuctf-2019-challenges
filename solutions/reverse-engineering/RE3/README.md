@@ -1,5 +1,20 @@
 # RE3
 
+Let's start off by trying our usual tricks. When we run the binary nothing seems to happen and when we run strings on the binary we don't get anything interesting.
+
+```
+root@dev ~/c/r/RE3# ./re3
+root@dev ~/c/r/RE3# strings ./re3
+/lib64/ld-linux-x86-64.so.2
+libc.so.6
+fflush
+putchar
+printf
+stdout
+```
+
+This will probably involve more analysis than we're used to. We can start by going into GDB and disassembling main.
+
 ```
 root@dev ~/c/r/RE3# gdb -q ./re3
 pwndbg: loaded 171 commands. Type pwndbg [filter] for a list.
@@ -7,7 +22,7 @@ pwndbg: created $rebase, $ida gdb functions (can be used with print/break)
 Reading symbols from ./re3...
 ```
 
-Disassemble main
+When we disassemble main, we see that there is a call to printFlag and that the flag is loaded into rdi from rip+0x2daa. This is very promising! Our only problem is that there's a jump if not equal (`jne`) instruction beforehand.
 
 ```
 pwndbg> disassemble main
@@ -27,7 +42,7 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 
-At main+8 the value 0 is moved into rbp-4, but then the line below it checks to see if it's equal to 1. We can solve this challenge 2 different ways:
+At main+8 the value 0 is moved into rbp-4, but then the line below (`cmp`) it checks to see if it's equal to 1. We can solve this challenge 2 different ways:
 
 1. Editing the value in memory with GDB
 
