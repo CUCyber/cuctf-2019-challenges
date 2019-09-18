@@ -1,0 +1,5 @@
+I have no idea where to start
+1. Try examining the binary with a reverse engineering platform.
+
+I still have no idea what to do
+2. Try creating your own go binaries and analyzing how they work.
