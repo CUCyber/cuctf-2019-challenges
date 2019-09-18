@@ -1,6 +1,13 @@
 # StrangerHeaders
 
-After attempting to run and use tools like GDB, R2, and strings to analyze the binary or quickly find the flag, it becomes clear that there is no way to execute or disassemble the binary. Using the hint from the name of the challenge, you must then review the ELF header. Using the first Wikipedia link, it becomes clear that the e_type was modified. Changing the e_type back to 0x02 makes the program executable and displays the flag.
+When trying to run the binary whether that be normally, in GDB, or radare2 it becomes clear that this binary just won't execute.
+
+```
+$ ./StrangerHeaders
+Failed to execute process './StrangerHeaders'. Reason:
+exec: Exec format error
+The file './StrangerHeaders' is marked as an executable but could not be run by the operating system.
+```
 
 If we take a look at the file's ELF headers, nothing immediately obvious stands out.
 
