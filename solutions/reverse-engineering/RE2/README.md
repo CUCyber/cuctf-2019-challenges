@@ -1,12 +1,17 @@
 # RE2
 
+If we try to run strings on the binary like we did in part 1, you might notice the "UPX!" strings at the bottom.
+
 ```
+$ strings ./re2
+...
 w;f_
 Cb/m
 Xl(H
 UPX!
 UPX!
 "4 (
+...
 ```
 
 If we scroll up a bit, we'll see:
