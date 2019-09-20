@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Google what an ODT file is
+
+I still have no idea where to start
+2. Try unzipping the ODT file
+
+Is this powershell safe to run?
+3. Yes.
