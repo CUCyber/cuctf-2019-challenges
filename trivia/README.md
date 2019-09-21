@@ -58,7 +58,7 @@ H: XKCD
 
 ## Question 8
 
-Q: What service did Paige Thompson exploit in the Capital One breach?
+Q: What cloud provider did Paige Thompson exploit in the recent Capital One breach?
 
 A: aws
 
