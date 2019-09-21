@@ -1,5 +1,3 @@
-char flag[] = "CUCTF{p4ck3d_v3ry_p00rly}";
-
 int main(void){
     char flag[24];
     flag[0] = 'C';
