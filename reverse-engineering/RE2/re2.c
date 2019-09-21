@@ -1,5 +1,6 @@
 int main(void){
     char flag[24];
+
     flag[0] = 'C';
     flag[1] = 'U';
     flag[2] =  'C';
@@ -25,7 +26,6 @@ int main(void){
     flag[22] =  'l';
     flag[23] =  'y';
     flag[24] =  '}';
-
 
     return 0;
 }
