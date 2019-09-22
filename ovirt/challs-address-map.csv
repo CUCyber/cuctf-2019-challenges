@@ -1,19 +1,20 @@
-10.0.145.13,	56:6f:78:90:00:01,	binary-exploitation/Bof1
-10.0.145.14,	56:6f:78:90:00:02,	binary-exploitation/Bof2
-10.0.145.15,	56:6f:78:90:00:03,	binary-exploitation/Tcash
-10.0.145.16,	56:6f:78:90:00:04,	binary-exploitation/Bof3
-10.0.145.17,	56:6f:78:90:00:05,	binary-exploitation/VM
-10.0.145.18,	56:6f:78:90:00:06,	binary-exploitation/Aegis
-10.0.145.19,	56:6f:78:90:00:07,	binary-exploitation/Uaf1
-10.0.145.20,	56:6f:78:90:00:08,	binary-exploitation/Uaf2
-10.0.145.21,	56:6f:78:90:00:09,	binary-exploitation/Spectre
-10.0.145.22,	56:6f:78:90:00:0a,	web-exploitation/Responsive
-10.0.145.23,	56:6f:78:90:00:0b,	web-exploitation/Paths
-10.0.145.24,	56:6f:78:90:00:0c,	web-exploitation/Heist
-10.0.145.25,	56:6f:78:90:00:0d,	web-exploitation/Web3
-10.0.145.26,	56:6f:78:90:00:0e,	web-exploitation/Web2
-10.0.145.27,	56:6f:78:90:00:10,	web-exploitation/Web1
-10.0.145.28,	56:6f:78:90:00:12,	web-exploitation/ReadMe
-10.0.145.29,	56:6f:78:90:00:13,	web-exploitation/Election
-10.0.145.30,	56:6f:78:90:00:14,	cryptography/SMS
-10.0.145.31,	56:6f:78:90:00:15,	cryptography/RSAdmin
+ip,mac,path,name,dns,port
+10.0.145.13,56:6f:78:90:00:01,binary-exploitation/Bof1,cuctf-bof1,bof1.ctf.cuctf.io,9000
+10.0.145.14,56:6f:78:90:00:02,binary-exploitation/Bof2,cuctf-bof2,bof2.ctf.cuctf.io,9100
+10.0.145.15,56:6f:78:90:00:03,binary-exploitation/Tcash,cuctf-tcash,tcash.ctf.cuctf.io,9700
+10.0.145.16,56:6f:78:90:00:04,binary-exploitation/Bof3,cuctf-bof3,bof3.ctf.cuctf.io,9300
+10.0.145.17,56:6f:78:90:00:05,binary-exploitation/VM,cuctf-vm,vm.ctf.cuctf.io,9800
+10.0.145.18,56:6f:78:90:00:06,binary-exploitation/Aegis,cuctf-aegis,aegis.ctf.cuctf.io,9600
+10.0.145.19,56:6f:78:90:00:07,binary-exploitation/Uaf1,cuctf-uaf1,uaf1.ctf.cuctf.io,9200
+10.0.145.20,56:6f:78:90:00:08,binary-exploitation/Uaf2,cuctf-uaf2,uaf2.ctf.cuctf.io,9400
+10.0.145.21,56:6f:78:90:00:09,binary-exploitation/Spectre,cuctf-spectre,spectre.ctf.cuctf.io,9500
+10.0.145.22,56:6f:78:90:00:0a,web-exploitation/Responsive,cuctf-responsive,responsive.ctf.cuctf.io,7700
+10.0.145.23,56:6f:78:90:00:0b,web-exploitation/Paths,cuctf-paths,paths.ctf.cuctf.io,7500
+10.0.145.24,56:6f:78:90:00:0c,web-exploitation/Heist,cuctf-heist,heist.ctf.cuctf.io,7600
+10.0.145.25,56:6f:78:90:00:0d,web-exploitation/Web3,cuctf-web3,web3.ctf.cuctf.io,7200
+10.0.145.26,56:6f:78:90:00:0e,web-exploitation/Web2,cuctf-web2,web2.ctf.cuctf.io,7100
+10.0.145.27,56:6f:78:90:00:10,web-exploitation/Web1,cuctf-web1,web1.ctf.cuctf.io,7000
+10.0.145.28,56:6f:78:90:00:12,web-exploitation/ReadMe,cuctf-readme,readme.ctf.cuctf.io,7300
+10.0.145.29,56:6f:78:90:00:13,web-exploitation/Election,cuctf-election,election.ctf.cuctf.io,7400
+10.0.145.30,56:6f:78:90:00:14,cryptography/SMS,cuctf-sms,sms.ctf.cuctf.io,8200
+10.0.145.31,56:6f:78:90:00:15,cryptography/RSAdmin,cuctf-rsadmin,rsadmin.ctf.cuctf.io,8000
