@@ -105,7 +105,7 @@
                 - [ tar, -C, /root/challenge, --strip-components, 1, -xzf, /root/challenge.tar.gz ]
                 - [ rm, -f, /root/challenge.tar.gz ]
                 - [ docker, build, -t, "{{ item.name }}", /root/challenge ]
-                - [ docker, run, -p, "{{ item.port }}:{{ item.port }}", -d, "{{ item.name }}" ]
+                - [ docker, run, --restart, always, -p, "{{ item.port }}:{{ item.port }}", -d, "{{ item.name }}" ]
         with_items: "{{ vms }}"
 
       always:
