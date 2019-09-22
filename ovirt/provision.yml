@@ -1,22 +1,3 @@
-# $ find . -name 'Dockerfile' | grep -v Heist | grep -Fv '/exploit/' | grep -Fv '/src/'
-# ./web-exploitation/Responsive/Dockerfile
-# ./web-exploitation/Web3/Dockerfile
-# ./web-exploitation/Paths/Dockerfile
-# ./web-exploitation/Web2/Dockerfile
-# ./web-exploitation/ReadMe/Dockerfile
-# ./web-exploitation/Election/Dockerfile
-# ./web-exploitation/Web1/Dockerfile
-# ./cryptography/SMS/Dockerfile
-# ./cryptography/RSAdmin/Dockerfile
-# ./binary-exploitation/Bof1/Dockerfile
-# ./binary-exploitation/Uaf1/Dockerfile
-# ./binary-exploitation/Aegis/Dockerfile
-# ./binary-exploitation/VM/Dockerfile
-# ./binary-exploitation/Bof3/Dockerfile
-# ./binary-exploitation/Spectre/Dockerfile
-# ./binary-exploitation/Bof2/Dockerfile
-# ./binary-exploitation/Uaf2/Dockerfile
-# ./binary-exploitation/Tcash/Dockerfile
 ---
 - name: CUCTF Provisioning
   hosts: localhost
@@ -39,6 +20,168 @@
         hostname: bof1.ctf.cuctf.io
         port: 9000
         path: binary-exploitation/Bof1
+      - template: cuctf-template
+        name: cuctf-bof2
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:02
+        hostname: bof2.ctf.cuctf.io
+        port: 9100
+        path: binary-exploitation/Bof2
+      - template: cuctf-template
+        name: cuctf-tcash
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:03
+        hostname: tcash.ctf.cuctf.io
+        port: 9700
+        path: binary-exploitation/Tcash
+      - template: cuctf-template
+        name: cuctf-bof3
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:04
+        hostname: bof3.ctf.cuctf.io
+        port: 9300
+        path: binary-exploitation/Bof3
+      - template: cuctf-template
+        name: cuctf-vm
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:05
+        hostname: vm.ctf.cuctf.io
+        port: 9800
+        path: binary-exploitation/VM
+      - template: cuctf-template
+        name: cuctf-aegis
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:06
+        hostname: aegis.ctf.cuctf.io
+        port: 9600
+        path: binary-exploitation/Aegis
+      - template: cuctf-template
+        name: cuctf-uaf1
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:07
+        hostname: uaf1.ctf.cuctf.io
+        port: 9200
+        path: binary-exploitation/Uaf1
+      - template: cuctf-template
+        name: cuctf-uaf2
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:08
+        hostname: uaf2.ctf.cuctf.io
+        port: 9400
+        path: binary-exploitation/Uaf2
+      - template: cuctf-template
+        name: cuctf-spectre
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:09
+        hostname: spectre.ctf.cuctf.io
+        port: 9500
+        path: binary-exploitation/Spectre
+      - template: cuctf-template
+        name: cuctf-responsive
+        memory: 2GiB
+        cpu_cores: 2
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:0a
+        hostname: responsive.ctf.cuctf.io
+        port: 7700
+        path: web-exploitation/Responsive
+      - template: cuctf-template
+        name: cuctf-paths
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:0b
+        hostname: paths.ctf.cuctf.io
+        port: 7500
+        path: web-exploitation/Paths
+      - template: cuctf-template
+        name: cuctf-heist
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:0c
+        hostname: heist.ctf.cuctf.io
+        port: 7600
+        path: web-exploitation/Heist
+      - template: cuctf-template
+        name: cuctf-web3
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:0d
+        hostname: web3.ctf.cuctf.io
+        port: 7200
+        path: web-exploitation/Web3
+      - template: cuctf-template
+        name: cuctf-web2
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:0e
+        hostname: web2.ctf.cuctf.io
+        port: 7100
+        path: web-exploitation/Web2
+      - template: cuctf-template
+        name: cuctf-web1
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:10
+        hostname: web1.ctf.cuctf.io
+        port: 7000
+        path: web-exploitation/Web1
+      - template: cuctf-template
+        name: cuctf-readme
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:12
+        hostname: readme.ctf.cuctf.io
+        port: 7300
+        path: web-exploitation/ReadMe
+      - template: cuctf-template
+        name: cuctf-election
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:13
+        hostname: election.ctf.cuctf.io
+        port: 7400
+        path: web-exploitation/Election
+      - template: cuctf-template
+        name: cuctf-sms
+        memory: 8GiB
+        cpu_cores: 4
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:14
+        hostname: sms.ctf.cuctf.io
+        port: 8200
+        path: cryptography/SMS
+      - template: cuctf-template
+        name: cuctf-rsadmin
+        memory: 2GiB
+        cpu_cores: 1
+        vlan: cuctf
+        mac_address: 56:6f:78:90:00:15
+        hostname: rsadmin.ctf.cuctf.io
+        port: 8000
+        path: cryptography/RSAdmin
 
   tasks:
     - name: Obtain Auth
