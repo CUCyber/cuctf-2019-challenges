@@ -1,0 +1,33 @@
+---
+- name: CUCTF Provisioning
+  hosts: localhost
+
+  vars_prompt:
+    - name: ovirt_username
+      prompt: "oVirt Login Details (architect.lab.cucyber.net)\n---\nUsername"
+      private: no
+    - name: ovirt_password
+      prompt: "Password"
+
+  vars_files:
+    - challenges.yml
+
+  tasks:
+    - name: Obtain Auth
+      no_log: true
+      ovirt_auth:
+        url: https://architect.lab.cucyber.net/ovirt-engine/api
+        username: "{{ ovirt_username }}"
+        password: "{{ ovirt_password }}"
+        ca_file: ca.pem
+
+    - block:
+      - name: Include Provisioning
+        include: provision.yml
+        with_items: "{{ challenges }}"
+
+      always:
+        - name: Revoke Auth
+          ovirt_auth:
+            ovirt_auth: "{{ ovirt_auth }}"
+            state: absent

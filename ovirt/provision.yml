@@ -1,258 +1,55 @@
----
-- name: CUCTF Provisioning
-  hosts: localhost
+- name: "Create VM: {{ item.name }}"
+  ovirt_vm:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ item.name }}"
+    cluster: "2019"
+    template: "{{ item.template }}"
+    memory: "{{ item.memory }}"
+    cpu_cores: "{{ item.cpu_cores }}"
+    clone: yes
+    state: present
 
-  vars_prompt:
-    - name: ovirt_username
-      prompt: "oVirt Login Details (architect.lab.cucyber.net)\n---\nUsername"
-      private: no
-    - name: ovirt_password
-      prompt: "Password"
+- name: "Tag VM: {{ item.name }}"
+  ovirt_tag:
+    auth: "{{ ovirt_auth }}"
+    name: cuctf
+    state: attached
+    vms:
+      - "{{ item.name }}"
 
-  vars:
-    - vms:
-      - template: cuctf-template
-        name: cuctf-bof1
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:01
-        hostname: bof1.ctf.cuctf.io
-        port: 9000
-        path: binary-exploitation/Bof1
-      - template: cuctf-template
-        name: cuctf-bof2
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:02
-        hostname: bof2.ctf.cuctf.io
-        port: 9100
-        path: binary-exploitation/Bof2
-      - template: cuctf-template
-        name: cuctf-tcash
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:03
-        hostname: tcash.ctf.cuctf.io
-        port: 9700
-        path: binary-exploitation/Tcash
-      - template: cuctf-template
-        name: cuctf-bof3
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:04
-        hostname: bof3.ctf.cuctf.io
-        port: 9300
-        path: binary-exploitation/Bof3
-      - template: cuctf-template
-        name: cuctf-vm
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:05
-        hostname: vm.ctf.cuctf.io
-        port: 9800
-        path: binary-exploitation/VM
-      - template: cuctf-template
-        name: cuctf-aegis
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:06
-        hostname: aegis.ctf.cuctf.io
-        port: 9600
-        path: binary-exploitation/Aegis
-      - template: cuctf-template
-        name: cuctf-uaf1
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:07
-        hostname: uaf1.ctf.cuctf.io
-        port: 9200
-        path: binary-exploitation/Uaf1
-      - template: cuctf-template
-        name: cuctf-uaf2
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:08
-        hostname: uaf2.ctf.cuctf.io
-        port: 9400
-        path: binary-exploitation/Uaf2
-      - template: cuctf-template
-        name: cuctf-spectre
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:09
-        hostname: spectre.ctf.cuctf.io
-        port: 9500
-        path: binary-exploitation/Spectre
-      - template: cuctf-template
-        name: cuctf-responsive
-        memory: 2GiB
-        cpu_cores: 2
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:0a
-        hostname: responsive.ctf.cuctf.io
-        port: 7700
-        path: web-exploitation/Responsive
-      - template: cuctf-template
-        name: cuctf-paths
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:0b
-        hostname: paths.ctf.cuctf.io
-        port: 7500
-        path: web-exploitation/Paths
-      - template: cuctf-template
-        name: cuctf-heist
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:0c
-        hostname: heist.ctf.cuctf.io
-        port: 7600
-        path: web-exploitation/Heist
-      - template: cuctf-template
-        name: cuctf-web3
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:0d
-        hostname: web3.ctf.cuctf.io
-        port: 7200
-        path: web-exploitation/Web3
-      - template: cuctf-template
-        name: cuctf-web2
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:0e
-        hostname: web2.ctf.cuctf.io
-        port: 7100
-        path: web-exploitation/Web2
-      - template: cuctf-template
-        name: cuctf-web1
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:10
-        hostname: web1.ctf.cuctf.io
-        port: 7000
-        path: web-exploitation/Web1
-      - template: cuctf-template
-        name: cuctf-readme
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:12
-        hostname: readme.ctf.cuctf.io
-        port: 7300
-        path: web-exploitation/ReadMe
-      - template: cuctf-template
-        name: cuctf-election
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:13
-        hostname: election.ctf.cuctf.io
-        port: 7400
-        path: web-exploitation/Election
-      - template: cuctf-template
-        name: cuctf-sms
-        memory: 8GiB
-        cpu_cores: 4
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:14
-        hostname: sms.ctf.cuctf.io
-        port: 8200
-        path: cryptography/SMS
-      - template: cuctf-template
-        name: cuctf-rsadmin
-        memory: 2GiB
-        cpu_cores: 1
-        vlan: cuctf
-        mac_address: 56:6f:78:90:00:15
-        hostname: rsadmin.ctf.cuctf.io
-        port: 8000
-        path: cryptography/RSAdmin
+- name: "Update MAC: {{ item.name }}"
+  ovirt_nic:
+    auth: "{{ ovirt_auth }}"
+    vm: "{{ item.name }}"
+    name: nic1
+    state: present
+    interface: virtio
+    mac_address: "{{ item.mac_address }}"
+    network: "{{ item.vlan }}"
 
-  tasks:
-    - name: Obtain Auth
-      ovirt_auth:
-        url: https://architect.lab.cucyber.net/ovirt-engine/api
-        username: "{{ ovirt_username }}"
-        password: "{{ ovirt_password }}"
-        ca_file: ca.pem
-
-    - block:
-      - name: Create VMs
-        ovirt_vm:
-          auth: "{{ ovirt_auth }}"
-          name: "{{ item.name }}"
-          cluster: "2019"
-          template: "{{ item.template }}"
-          memory: "{{ item.memory }}"
-          cpu_cores: "{{ item.cpu_cores }}"
-          clone: yes
-          state: present
-        with_items: "{{ vms }}"
-
-      - name: Tag VMs
-        ovirt_tag:
-          auth: "{{ ovirt_auth }}"
-          name: cuctf
-          state: attached
-          vms:
-            - "{{ item.name }}"
-        with_items: "{{ vms }}"
-
-      - name: Update MAC of VMs
-        ovirt_nic:
-          auth: "{{ ovirt_auth }}"
-          vm: "{{ item.name }}"
-          name: nic1
-          state: present
-          interface: virtio
-          mac_address: "{{ item.mac_address }}"
-          network: "{{ item.vlan }}"
-        with_items: "{{ vms }}"
-
-      - name: Start VMs
-        ovirt_vm:
-          auth: "{{ ovirt_auth }}"
-          name: "{{ item.name }}"
-          state: running
-          cloud_init:
-            host_name: "{{ item.hostname }}"
-            user_name: root
-            root_password: "{{ lookup('password', 'creds/{{ item.name }}/root length=24') }}"
-            regenerate_ssh_keys: true
-            custom_script: |
-              write_files:
-                - encoding: b64
-                  path: /root/challenge.tar.gz
-                  content: "{{ lookup('pipe', "tar -C '../" + item.path|dirname + "' -cz '" + item.path|basename + "' | base64") }}"
-              bootcmd:
-                - [ rm, -f, /etc/machine-id ]
-                - [ systemd-machine-id-setup ]
-              runcmd:
-                - [ rm, -rf, /root/challenge ]
-                - [ mkdir, -p, /root/challenge ]
-                - [ tar, -C, /root/challenge, --strip-components, 1, -xzf, /root/challenge.tar.gz ]
-                - [ rm, -f, /root/challenge.tar.gz ]
-                - [ docker, build, -t, "{{ item.name }}", /root/challenge ]
-                - [ docker, run, --restart, always, -p, "{{ item.port }}:{{ item.port }}", -d, "{{ item.name }}" ]
-        with_items: "{{ vms }}"
-
-      always:
-        - name: Revoke Auth
-          ovirt_auth:
-            ovirt_auth: "{{ ovirt_auth }}"
-            state: absent
+- name: "Start VM: {{ item.name }}"
+  ovirt_vm:
+    auth: "{{ ovirt_auth }}"
+    name: "{{ item.name }}"
+    state: running
+    cloud_init:
+      host_name: "{{ item.hostname }}"
+      user_name: root
+      root_password: "{{ lookup('password', 'creds/{{ item.name }}/root length=24') }}"
+      regenerate_ssh_keys: true
+      custom_script: |
+        write_files:
+          - encoding: b64
+            path: /root/challenge.tar.gz
+            content: "{{ lookup('pipe', "tar -C '../" + item.path|dirname + "' -cz '" + item.path|basename + "' | base64") }}"
+        bootcmd:
+          - "rm -f /etc/machine-id"
+          - "systemd-machine-id-setup"
+        runcmd:
+          - "rm -rf /root/challenge"
+          - "mkdir -p /root/challenge"
+          - "tar -C /root/challenge --strip-components 1 -xzf /root/challenge.tar.gz"
+          - "rm -f /root/challenge.tar.gz"
+          - "bash -c '[ -f /root/challenge/docker-compose.yml ] && (docker-compose -f /root/challenge/docker-compose.yml -p '{{ item.name }}' build && docker-compose -f /root/challenge/docker-compose.yml -p '{{ item.name }}' up -d) || (docker build -t '{{ item.name }}' /root/challenge && docker run --restart always -p '{{ item.port }}:{{ item.port }}' -d '{{ item.name }}')'"
+          - |
+            bash -c {{ item.post|default(':')|quote }}
