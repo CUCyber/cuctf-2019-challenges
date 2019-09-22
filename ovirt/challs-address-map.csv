@@ -1,8 +1,8 @@
+10.0.145.13,	56:6f:78:90:00:01,	binary-exploitation/Bof1
 10.0.145.14,	56:6f:78:90:00:02,	binary-exploitation/Bof2
 10.0.145.15,	56:6f:78:90:00:03,	binary-exploitation/Tcash
 10.0.145.16,	56:6f:78:90:00:04,	binary-exploitation/Bof3
 10.0.145.17,	56:6f:78:90:00:05,	binary-exploitation/VM
-10.0.145.13,	56:6f:78:90:00:01,	binary-exploitation/Bof1
 10.0.145.18,	56:6f:78:90:00:06,	binary-exploitation/Aegis
 10.0.145.19,	56:6f:78:90:00:07,	binary-exploitation/Uaf1
 10.0.145.20,	56:6f:78:90:00:08,	binary-exploitation/Uaf2
@@ -15,10 +15,5 @@
 10.0.145.27,	56:6f:78:90:00:10,	web-exploitation/Web1
 10.0.145.28,	56:6f:78:90:00:12,	web-exploitation/ReadMe
 10.0.145.29,	56:6f:78:90:00:13,	web-exploitation/Election
-10.0.145.30,	56:6f:78:90:00:14,	forensics/Stego2
-10.0.145.31,	56:6f:78:90:00:15,	forensics/Big Phish
-10.0.145.32,	56:6f:78:90:00:16,	forensics/Stego3
-10.0.145.33,	56:6f:78:90:00:17,	forensics/Stego1
-10.0.145.34,	56:6f:78:90:00:18,	forensics/Whale Hunt
-10.0.145.35,	56:6f:78:90:00:19,	cryptography/SMS
-10.0.145.36,	56:6f:78:90:00:1a,	cryptography/RSAdmin
+10.0.145.30,	56:6f:78:90:00:14,	cryptography/SMS
+10.0.145.31,	56:6f:78:90:00:15,	cryptography/RSAdmin
