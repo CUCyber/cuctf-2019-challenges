@@ -99,13 +99,13 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 
 | Challenge           | Points | Port |
 | --------------------| ------ | ---- |
-| Question 1          | 10     | None |
-| Question 2          | 10     | None |
-| Question 3          | 10     | None |
-| Question 4          | 10     | None |
-| Question 5          | 10     | None |
-| Question 6          | 10     | None |
-| Question 7          | 10     | None |
-| Question 8          | 10     | None |
-| Question 9          | 10     | None |
-| Question 10         | 10     | None |
+| Question 1          |  5     | None |
+| Question 2          |  5     | None |
+| Question 3          |  5     | None |
+| Question 4          |  5     | None |
+| Question 5          |  5     | None |
+| Question 6          |  5     | None |
+| Question 7          |  5     | None |
+| Question 8          |  5     | None |
+| Question 9          |  5     | None |
+| Question 10         |  5     | None |
