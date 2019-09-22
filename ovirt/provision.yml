@@ -23,62 +23,61 @@
 
   vars_prompt:
     - name: ovirt_username
-      prompt: "Username: "
+      prompt: "oVirt Login Details (architect.lab.cucyber.net)\n---\nUsername"
       private: no
     - name: ovirt_password
-      prompt: "Password: "
+      prompt: "Password"
 
   tasks:
+    - name: Obtain Auth
+      ovirt_auth:
+        url: https://architect.lab.cucyber.net/ovirt-engine/api
+        username: "{{ ovirt_username }}"
+        password: "{{ ovirt_password }}"
+        ca_file: ca.pem
 
-  - name: Obtain auth
-    ovirt_auth:
-      url: https://architect.lab.cucyber.net/ovirt-engine/api
-      username: "{{ ovirt_username }}"
-      password: "{{ ovirt_password }}"
-      ca_file: ca.pem
+    - name: "Create VM - {{ item.name }}"
+      ovirt_vm:
+        state: running
+        auth: "{{ ovirt_auth }}"
+        template: "{{ item.template }}"
+        cluster: 2019
+        memory: "{{ item.memory }}"
+        cpu_cores: "{{ item.cpu_cores }}"
+        type: server
+        name: "{{ item.name }}"
+        nics:
+          - name: nic1
+            profile_name: "{{ item.vlan }}"
+            interface: virtio
+            mac_address: "{{ item.mac_address }}"
+        cloud_init:
+          host_name: "{{ item.hostname }}"
+          user_name: root
+          root_password: "{{ lookup('password', 'creds/{{ item.name }}/root length=24') }}"
+          regenerate_ssh_keys: true
+          custom_script: |
+            write_files:
+              - encoding: b64
+                path: /root/challenge.tar.gz
+                content: "{{ lookup('pipe', "tar -C '../" + item.path|dirname + "' -cz '" + item.path|basename + "' | base64") }}"
+            runcmd:
+              - [ mkdir, -p, /root/challenge ]
+              - [ tar, -C, /root/challenge, --strip-components, 1, -xzf, /root/challenge.tar.gz ]
+              - [ rm, -f, /root/challenge.tar.gz ]
+              - [ docker, build, -t, "{{ item.name }}", /root/challenge ]
+              - [ docker, run, -d, "{{ item.name }}" ]
+      with_items:
+        - name: cuctf-bof1
+          template: cuctf-template
+          cpu_cores: 1
+          memory: 2GiB
+          mac_address: 56:6f:78:90:00:01
+          vlan: cuctf
+          hostname: bof1.ctf.cuctf.io
+          path: binary-exploitation/Bof1
 
-  - name: "Create VM - {{ item.name }}"
-    ovirt_vms:
-      state: running
-      auth: "{{ ovirt_auth }}"
-      template: "{{ item.template }}"
-      cluster: 2019
-      memory: "{{ item.memory }}"
-      cpu_cores: "{{ item.cpu_cores }}"
-      type: server
-      name: "{{ item.name }}"
-      nics:
-        - name: nic1
-          profile_name: "{{ item.vlan }}"
-          interface: virtio
-          mac_address: "{{ item.mac_address }}"
-      cloud_init:
-        host_name: "{{ item.hostname }}"
-        user_name: root
-        root_password: "{{ lookup('password', 'creds/{{ item.name }}/root length=24') }}"
-        regenerate_ssh_keys: true
-        custom_script: |
-          write_files:
-            - encoding: b64
-              path: /root/challenge.tar.gz
-              content: "{{ lookup('pipe', "tar -C '../" + item.path|dirname + "' -cz '" + item.path|basename + "' | base64") }}"
-          runcmd:
-            - [ mkdir, -p, /root/challenge ]
-            - [ tar, -C, /root/challenge, --strip-components, 1, -xzf, /root/challenge.tar.gz ]
-            - [ rm, -f, /root/challenge.tar.gz ]
-            - [ docker, build, -t, "{{ item.name }}", /root/challenge ]
-            - [ docker, run, -d, "{{ item.name }}" ]
-    with_items:
-      - name: cuctf-bof1
-        template: cuctf-template
-        cpu_cores: 1
-        memory: 2GiB
-        mac_address: 56:6f:78:90:00:01
-        vlan: cuctf
-        hostname: bof1.ctf.cuctf.io
-        path: binary-exploitation/Bof1
-
-  - name: Revoke auth
-    ovirt_auth:
-      ovirt_auth: "{{ ovirt_auth }}"
-      state: absent
+    - name: Revoke Auth
+      ovirt_auth:
+        ovirt_auth: "{{ ovirt_auth }}"
+        state: absent
