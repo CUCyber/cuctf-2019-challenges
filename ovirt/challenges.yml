@@ -52,7 +52,7 @@ challenges:
   - template: cuctf-template
     name: cuctf-aegis
     memory: 2GiB
-    cpu_cores: 1
+    cpu_cores: 4
     vlan: cuctf
     mac_address: 56:6f:78:90:00:06
     hostname: aegis.ctf.cuctf.io
@@ -82,7 +82,7 @@ challenges:
   - template: cuctf-template
     name: cuctf-spectre
     memory: 2GiB
-    cpu_cores: 1
+    cpu_cores: 2
     vlan: cuctf
     mac_address: 56:6f:78:90:00:09
     hostname: spectre.ctf.cuctf.io
@@ -91,8 +91,8 @@ challenges:
 
   - template: cuctf-template
     name: cuctf-responsive
-    memory: 2GiB
-    cpu_cores: 2
+    memory: 8GiB
+    cpu_cores: 4
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0a
     hostname: responsive.ctf.cuctf.io
@@ -112,7 +112,7 @@ challenges:
   - template: cuctf-template
     name: cuctf-heist
     memory: 2GiB
-    cpu_cores: 1
+    cpu_cores: 4
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0c
     hostname: heist.ctf.cuctf.io
