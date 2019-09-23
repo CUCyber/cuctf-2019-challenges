@@ -118,7 +118,7 @@ challenges:
     hostname: heist.ctf.cuctf.io
     port: 7600
     path: web-exploitation/Heist
-    post: "sed -i -e '/docker-compose/d' /etc/crontab; echo '*/15 * * * * root /usr/bin/docker-compose -f /root/challenge/docker-compose.yml -p cuctf-heist restart' >>/etc/crontab"
+    post: "sed -i -e '/^\\*\\/15 \\* \\* \\* \\* root \\/usr\\/bin\\/docker-compose/d' /etc/crontab; echo '*/15 * * * * root /usr/bin/docker-compose -f /root/challenge/docker-compose.yml -p '\"'\"'cuctf-heist'\"'\"' restart' >>/etc/crontab"
 
   - template: cuctf-template
     name: cuctf-web3

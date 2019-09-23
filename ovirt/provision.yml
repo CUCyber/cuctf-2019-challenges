@@ -50,6 +50,7 @@
           - "mkdir -p /root/challenge"
           - "tar -C /root/challenge --strip-components 1 -xzf /root/challenge.tar.gz"
           - "rm -f /root/challenge.tar.gz"
-          - "bash -c '[ -f /root/challenge/docker-compose.yml ] && (docker-compose -f /root/challenge/docker-compose.yml -p '{{ item.name }}' build && docker-compose -f /root/challenge/docker-compose.yml -p '{{ item.name }}' up -d) || (docker build -t '{{ item.name }}' /root/challenge && docker run --restart always -p '{{ item.port }}:{{ item.port }}' -d '{{ item.name }}')'"
+          - |
+            bash -c {{ ("[ -f /root/challenge/docker-compose.yml ] && (docker-compose -f /root/challenge/docker-compose.yml -p '" + item.name + "' build && sed -i -e '/^@reboot root \/usr\/bin\/docker-compose/d' /etc/crontab && echo '@reboot root /usr/bin/docker-compose -f /root/challenge/docker-compose.yml -p '" + '"' + "'" + '"' + "'" + item.name + "'" + '"' + "'" + '"' + "' up -d' >>/etc/crontab && docker-compose -f /root/challenge/docker-compose.yml -p '" + item.name + "' up -d) || (docker build -t '" + item.name + "' /root/challenge && docker run --restart always -p '" + item.port|string + ":" + item.port|string + "' -d '" + item.name + "')")|quote }}
           - |
             bash -c {{ item.post|default(':')|quote }}
