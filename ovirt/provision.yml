@@ -2,12 +2,12 @@
   ovirt_vm:
     auth: "{{ ovirt_auth }}"
     name: "{{ item.name }}"
+    state: present
     cluster: "2019"
     template: "{{ item.template }}"
     memory: "{{ item.memory }}"
     cpu_cores: "{{ item.cpu_cores }}"
     clone: yes
-    state: present
 
 - name: "Tag VM: {{ item.name }}"
   ovirt_tag:
