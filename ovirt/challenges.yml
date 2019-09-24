@@ -6,7 +6,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:01
     hostname: bof1.ctf.cuctf.io
-    port: 9000
+    port: 9000:9000
     path: binary-exploitation/Bof1
 
   - template: cuctf-template
@@ -16,7 +16,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:02
     hostname: bof2.ctf.cuctf.io
-    port: 9100
+    port: 9100:9100
     path: binary-exploitation/Bof2
 
   - template: cuctf-template
@@ -26,7 +26,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:03
     hostname: tcash.ctf.cuctf.io
-    port: 9700
+    port: 9700:9700
     path: binary-exploitation/Tcash
 
   - template: cuctf-template
@@ -36,7 +36,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:04
     hostname: bof3.ctf.cuctf.io
-    port: 9300
+    port: 9300:9300
     path: binary-exploitation/Bof3
 
   - template: cuctf-template
@@ -46,7 +46,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:05
     hostname: vm.ctf.cuctf.io
-    port: 9800
+    port: 9800:9800
     path: binary-exploitation/VM
 
   - template: cuctf-template
@@ -56,7 +56,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:06
     hostname: aegis.ctf.cuctf.io
-    port: 9600
+    port: 9600:9600
     path: binary-exploitation/Aegis
 
   - template: cuctf-template
@@ -66,7 +66,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:07
     hostname: uaf1.ctf.cuctf.io
-    port: 9200
+    port: 9200:9200
     path: binary-exploitation/Uaf1
 
   - template: cuctf-template
@@ -76,7 +76,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:08
     hostname: uaf2.ctf.cuctf.io
-    port: 9400
+    port: 9400:9400
     path: binary-exploitation/Uaf2
 
   - template: cuctf-template
@@ -86,7 +86,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:09
     hostname: spectre.ctf.cuctf.io
-    port: 9500
+    port: 9500:9500
     path: binary-exploitation/Spectre
 
   - template: cuctf-template
@@ -96,7 +96,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0a
     hostname: responsive.ctf.cuctf.io
-    port: 7700
+    port: 7700:7700
     path: web-exploitation/Responsive
 
   - template: cuctf-template
@@ -106,7 +106,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0b
     hostname: paths.ctf.cuctf.io
-    port: 7500
+    port: 7500:7500
     path: web-exploitation/Paths
 
   - template: cuctf-template
@@ -116,7 +116,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0c
     hostname: heist.ctf.cuctf.io
-    port: 7600
+    port: 7600:7600
     path: web-exploitation/Heist
     post: "sed -i -e '/^\\*\\/15 \\* \\* \\* \\* root \\/usr\\/bin\\/docker-compose/d' /etc/crontab; echo '*/15 * * * * root /usr/bin/docker-compose -f /root/challenge/docker-compose.yml -p '\"'\"'cuctf-heist'\"'\"' restart' >>/etc/crontab"
 
@@ -127,7 +127,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0d
     hostname: web3.ctf.cuctf.io
-    port: 7200
+    port: 7200:80
     path: web-exploitation/Web3
 
   - template: cuctf-template
@@ -137,7 +137,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:0e
     hostname: web2.ctf.cuctf.io
-    port: 7100
+    port: 7100:7100
     path: web-exploitation/Web2
 
   - template: cuctf-template
@@ -147,7 +147,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:10
     hostname: web1.ctf.cuctf.io
-    port: 7000
+    port: 7000:7000
     path: web-exploitation/Web1
 
   - template: cuctf-template
@@ -157,7 +157,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:12
     hostname: readme.ctf.cuctf.io
-    port: 7300
+    port: 7300:80
     path: web-exploitation/ReadMe
 
   - template: cuctf-template
@@ -167,7 +167,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:13
     hostname: election.ctf.cuctf.io
-    port: 7400
+    port: 7400:7400
     path: web-exploitation/Election
 
   - template: cuctf-template
@@ -177,7 +177,7 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:14
     hostname: sms.ctf.cuctf.io
-    port: 8200
+    port: 8200:8200
     path: cryptography/SMS
 
   - template: cuctf-template
@@ -187,5 +187,5 @@ challenges:
     vlan: cuctf
     mac_address: 56:6f:78:90:00:15
     hostname: rsadmin.ctf.cuctf.io
-    port: 8000
+    port: 8000:8000
     path: cryptography/RSAdmin
