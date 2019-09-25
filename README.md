@@ -93,6 +93,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Stego2              |  25    | None |
 | Stego3              |  50    | None |
 | Big Phish           | 125    | None |
+| Hunted              | 250    | None |
 | Whale Hunt          | 600    | None |
 
 ### Trivia
