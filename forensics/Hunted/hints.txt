@@ -1,0 +1,11 @@
+I have no idea where to start
+1. Google common memory forensic tools
+
+I can't get my volatility profile to load
+2. Make sure that the profile is a zip file
+
+I still can't get my volatility profile to load
+3. Try using --plugins=/path/to/dir and --info to figure out the right profile name
+
+I'm stuck on what to look for
+4. Google for APT or state-sponsored malware on Linux. Try to look for those using Volatility.
