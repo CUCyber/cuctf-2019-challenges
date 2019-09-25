@@ -82,6 +82,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Crypto3             |  30    | None |
 | Crypto4             |  40    | None |
 | Crypto5             |  50    | None |
+| Crown Sterling      | 150    | None |
 | RSAdmin             | 300    | 8000 |
 | SMS                 | 600    | 8200 |
 
