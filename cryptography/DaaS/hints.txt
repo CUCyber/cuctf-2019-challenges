@@ -1,0 +1,8 @@
+I have no idea where to start
+1. Try decrypting a message. What do you notice about the ciphertext and plaintext?
+
+I have no idea what's going on here
+2. Try researching RSA on wikipedia. Make sure that your encodings can translate between bytes (strings) and integers.
+
+Is there padding on each message?
+3. There is no padding for each message.

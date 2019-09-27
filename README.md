@@ -84,6 +84,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Crypto5             |  50    | None |
 | Crown Sterling      | 150    | None |
 | RSAdmin             | 300    | 8000 |
+| DaaS                | 450    | 8100 |
 | SMS                 | 600    | 8200 |
 
 ### Forensics
