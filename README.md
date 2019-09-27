@@ -57,7 +57,7 @@ A CTF that challenges you from trivia questions to reverse engineering ELF binar
 | Uaf2                | 200    | 9400 |
 | Spectre             | 300    | 9500 |
 | Aegis               | 400    | 9600 |
-| TCash               | 700    | 9700 |
+| TCash               | 600    | 9700 |
 | VM                  | 750    | 9800 |
 
 ### Web Exploitation
