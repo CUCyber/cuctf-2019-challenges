@@ -6,7 +6,7 @@
 #include "encrypt.h"
 
 #define ASSERT(x) \
-    if (!(x)) exit(-1)
+    if (!(x)) exit(-1);
 
 FORBIDDEN_FUNC void
 flag_function(void){
@@ -16,8 +16,16 @@ FORBIDDEN_FUNC void flag_guard(){};
 
 SECRET_HELPER_FUNC char *
 secret_encryption(char *key){
+    uint8_t check[] = {
+        121, 101, 101, 97, 52, 114, 33
+    };
+
     for(int i = 0; i < strlen(key); i++)
         key[i] ^= 0x42;
+
+    for(int i = 0; i < strlen(key); i++)
+        ASSERT(key[i] == check[i]);
+
     return key;
 }
 SECRET_HELPER_FUNC void secret_encryption_guard(){};
@@ -78,21 +86,24 @@ private_function(char *key1, char *key2){
 
     ASSERT(offset == 2 * 3);
 
-    ASSERT(strlen(key1) == 6);
+    ASSERT(strlen(key1) == 7);
 
     s = private_encryption(key1);
     if (s == NULL)
         exit(-1);
 
-    for (int i = 2, j = 0; i > 0; i--, j++)
-        ASSERT(s[i] == 0x6d-j);
+    for (int i = 1, j = 0; i > 0; i--, j++)
+        ASSERT(s[i] == (0x6e - j));
 
-    ASSERT(s[0] == 'a');
+    ASSERT(s[0] == '_');
 
     for (int i = 0; i < 2; i++)
-        ASSERT(s[i+4] == 0x73+i);
+        ASSERT(s[i+2] == (0x65 - i * 0x32));
 
-    ASSERT(s[3] == 'o');
+    for (int i = 0; i < 2; i++)
+        ASSERT(s[i+5] == 't');
+
+    ASSERT(s[4] == 'x');
 
     set_key((char *)s);
     decrypt_mem(
