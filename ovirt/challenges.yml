@@ -189,3 +189,13 @@ challenges:
     hostname: rsadmin.ctf.cuctf.io
     port: 8000:8000
     path: cryptography/RSAdmin
+
+  - template: cuctf-template
+    name: cuctf-daas
+    memory: 8GiB
+    cpu_cores: 2
+    vlan: cuctf
+    mac_address: 56:6f:78:90:00:16
+    hostname: daas.ctf.cuctf.io
+    port: 8100:8100
+    path: cryptography/DaaS

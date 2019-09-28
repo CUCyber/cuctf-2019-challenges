@@ -18,3 +18,4 @@ ip,mac,path,name,dns,port
 10.0.145.29,56:6f:78:90:00:13,web-exploitation/Election,cuctf-election,election.ctf.cuctf.io,7400
 10.0.145.30,56:6f:78:90:00:14,cryptography/SMS,cuctf-sms,sms.ctf.cuctf.io,8200
 10.0.145.31,56:6f:78:90:00:15,cryptography/RSAdmin,cuctf-rsadmin,rsadmin.ctf.cuctf.io,8000
+10.0.145.32,56:6f:78:90:00:16,cryptography/DaaS,cuctf-daas,daas.ctf.cuctf.io,8100
