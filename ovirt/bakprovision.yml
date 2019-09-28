@@ -1,0 +1,37 @@
+- name: "Create Droplet: {{ item.name }}"
+  digital_ocean_droplet:
+    state: present
+    name: "{{ item.hostname|regex_replace('\\.ctf\\.cuctf\\.io$', '.bak.cuctf.io') }}"
+    oauth_token: "{{ do_api_token }}"
+    size: 8gb
+    region: nyc3
+    image: centos-7-x64
+    tags:
+      - cuctf
+    ssh_keys:
+      - 25430240
+    user_data: |
+      #cloud-config
+      write_files:
+        - encoding: b64
+          path: /root/challenge.tar.gz
+          content: "{{ lookup('pipe', "tar -C '../" + item.path|dirname + "' -cz '" + item.path|basename + "' | base64") }}"
+      runcmd:
+        - "rm -rf /root/challenge"
+        - "mkdir -p /root/challenge"
+        - "tar -C /root/challenge --strip-components 1 -xzf /root/challenge.tar.gz"
+        - "rm -f /root/challenge.tar.gz"
+        - "yum install -y yum-utils device-mapper-persistent-data lvm2"
+        - "yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
+        - "yum install -y docker-ce docker-compose"
+        - "systemctl enable --now docker"
+        - |
+          bash -c {{ ("[ -f /root/challenge/docker-compose.yml ] && (docker-compose -f /root/challenge/docker-compose.yml -p '" + item.name + "' build && sed -i -e '/^@reboot root \/usr\/bin\/docker-compose/d' /etc/crontab && echo '@reboot root /usr/bin/docker-compose -f /root/challenge/docker-compose.yml -p '" + '"' + "'" + '"' + "'" + item.name + "'" + '"' + "'" + '"' + "' up -d' >>/etc/crontab && docker-compose -f /root/challenge/docker-compose.yml -p '" + item.name + "' up -d) || (docker build -t '" + item.name + "' /root/challenge && docker run --restart always -p '" + item.port + "' -d '" + item.name + "')")|quote }}
+        - |
+          bash -c {{ item.post|default(':')|quote }}
+    wait_timeout: 500
+  register: my_droplet
+
+- name: "Report Droplet: {{ item.name }}"
+  debug:
+    msg: "{{ my_droplet.data.droplet.name }} => {{ my_droplet.data.ip_address }}"

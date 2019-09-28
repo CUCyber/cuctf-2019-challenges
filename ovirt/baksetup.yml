@@ -1,0 +1,16 @@
+---
+- name: CUCTF Provisioning (Digital Ocean Edition)
+  hosts: localhost
+
+  vars_prompt:
+    - name: do_api_token
+      prompt: "Digital Ocean Authorization Details (api.digitalocean.com)\n---\nAPI Token"
+
+  vars_files:
+    - challenges.yml
+
+  tasks:
+    - block:
+      - name: Include Provisioning
+        include: bakprovision.yml
+        with_items: "{{ challenges }}"
