@@ -11,6 +11,17 @@
 
   tasks:
     - block:
+      - name: Generate SSH Key
+        openssh_keypair:
+          path: creds/cuctf_backup_id_rsa
+        register: gen_key
+      - name: Get SSH Key ID
+        digital_ocean_sshkey:
+          state: present
+          name: cuctf-backup
+          oauth_token: "{{ do_api_token }}"
+          ssh_pub_key: "{{ gen_key.public_key }}"
+        register: key
       - name: Include Provisioning
         include: bakprovision.yml
         with_items: "{{ challenges }}"

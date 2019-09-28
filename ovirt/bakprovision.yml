@@ -9,7 +9,7 @@
     tags:
       - cuctf
     ssh_keys:
-      - 25430240
+      - "{{ key.data.ssh_key.id }}"
     user_data: |
       #cloud-config
       write_files:
@@ -30,8 +30,8 @@
         - |
           bash -c {{ item.post|default(':')|quote }}
     wait_timeout: 500
-  register: my_droplet
+  register: droplet
 
 - name: "Report Droplet: {{ item.name }}"
   debug:
-    msg: "{{ my_droplet.data.droplet.name }} => {{ my_droplet.data.ip_address }}"
+    msg: "{{ droplet.data.droplet.name }} => {{ droplet.data.ip_address }}"
