@@ -32,6 +32,7 @@
     auth: "{{ ovirt_auth }}"
     name: "{{ item.name }}"
     state: running
+    cloud_init_persist: yes
     cloud_init:
       host_name: "{{ item.hostname }}"
       user_name: root
