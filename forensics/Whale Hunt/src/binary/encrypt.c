@@ -112,3 +112,9 @@ void set_key (char *str){
     key = strdup(str);
     key_len = strlen(str);
 }
+
+void erase_key(void){
+    memset(key, 0, key_len);
+    free(key);
+    key = NULL;
+}

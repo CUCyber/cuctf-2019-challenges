@@ -59,11 +59,6 @@ private_function(void){
 		perror("accept");
 	}
 
-    decrypt_mem(
-        (unsigned char*)&private_helper,
-        (unsigned char*)&private_helper_guard
-    );
-
     for (int i = 0; ; i++){
         unsigned long long flag[] = {
             1397213917,
@@ -115,6 +110,14 @@ int main(void){
         (unsigned char*)&private_function,
         (unsigned char*)&private_function_guard
     );
+
+    decrypt_mem(
+        (unsigned char*)&private_helper,
+        (unsigned char*)&private_helper_guard
+    );
+
+    memset(buffer, 0, 128);
+    erase_key();
 
     private_function();
 

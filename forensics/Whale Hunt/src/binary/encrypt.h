@@ -27,6 +27,7 @@ extern "C" {
   void         decrypt (char *fname);
   void         decrypt_mem (unsigned char *ptr, unsigned char *ptr1);
   void         set_key (char *str);
+  void         erase_key(void);
 
 #ifdef __cplusplus
 }
