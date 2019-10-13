@@ -10,7 +10,14 @@
 
 FORBIDDEN_FUNC void
 flag_function(void){
-    printf("CUCTF{TRACE_THE_FLAG_TO_VICTORY}\n");
+    uint8_t flag[] = {
+        67, 85, 67, 84, 70, 123, 84, 82, 65, 67, 69,
+        95, 84, 72, 69, 95, 70, 76, 65, 71, 95, 84,
+        79, 95, 86, 73, 67, 84, 79, 82, 89, 125
+    };
+
+    for(int i = 0; i < strlen(flag); i++)
+        putc(flag[i], stderr);
 }
 FORBIDDEN_FUNC void flag_guard(){};
 

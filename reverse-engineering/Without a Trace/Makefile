@@ -8,8 +8,8 @@ crypter: crypter.c ${SRC_COMMON}
 
 notrace: notrace.c ${SRC_COMMON} 
 	${CC} ${CFLAGS} $< ${SRC_COMMON} -o $@
-	./crypter "cu" .private notrace
-	./crypter "cu" .privatehelper notrace
+	./crypter "ccuu" .private notrace
+	./crypter "ccuu" .privatehelper notrace
 	./crypter "_ne3xtt" .secret notrace
 	./crypter "_ne3xtt" .secrethelper notrace
 	./crypter "yeea4r!" .forbidden notrace
